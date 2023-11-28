@@ -52,13 +52,13 @@ end
 local servers = {
   -- clangd = {},
   -- gopls = {},
-  -- rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = require('custom.lspconfig.lua_ls'),
   pyright = require('custom.lspconfig.pyright'),
   ruff_lsp = {},
+  rust_analyzer = require('custom.lspconfig.rust_analyzer'),
 }
 
 -- Setup neovim lua configuration
