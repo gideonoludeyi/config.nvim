@@ -473,5 +473,8 @@ cmp.setup {
 -- [[ Config aerial.nvim ]]
 vim.keymap.set({ "n", "v" }, "<leader>ta", "<cmd>AerialToggle<CR>", { desc = "[T]oggle [A]erial map" })
 
+-- [[ Configure terminal mode ]]
+vim.keymap.set("t", "<ESC>", "<C-\\><C-N>", { desc = "Escape to Terminal-Normal Mode" })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
