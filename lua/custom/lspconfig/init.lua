@@ -82,6 +82,7 @@ local servers = {
   ruff_lsp = {},
   rust_analyzer = require('custom.lspconfig.rust_analyzer'),
   ts_ls = require('custom.lspconfig.ts_ls'),
+  ruby_lsp = {},
 }
 
 -- Setup neovim lua configuration
