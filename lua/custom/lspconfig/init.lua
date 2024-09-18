@@ -81,7 +81,7 @@ local servers = {
   pyright = require('custom.lspconfig.pyright'),
   ruff_lsp = {},
   rust_analyzer = require('custom.lspconfig.rust_analyzer'),
-  tsserver = require('custom.lspconfig.tsserver'),
+  ts_ls = require('custom.lspconfig.ts_ls'),
 }
 
 -- Setup neovim lua configuration
@@ -105,6 +105,9 @@ local default_config = {
 
 mason_lspconfig.setup_handlers {
   function(server_name)
+    if server_name == 'tsserver' then
+      server_name = 'ts_ls'
+    end
     local config = util.shallowmerge(default_config, servers[server_name])
 
     require('lspconfig')[server_name].setup(config)
