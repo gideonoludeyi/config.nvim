@@ -133,5 +133,5 @@ return {
   require 'kickstart.plugins.autoformat',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.debug',
+  -- require 'kickstart.plugins.nvim-lint',
 }

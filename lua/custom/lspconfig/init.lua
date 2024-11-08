@@ -38,6 +38,10 @@ local on_attach = function(_, bufnr)
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, '[W]orkspace [L]ist Folders')
 
+  nmap('<leader>ti', function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, '[T]oggle [I]nlay hints')
+
   -- Create a command `:Format` local to the LSP buffer
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
@@ -90,6 +94,7 @@ local servers = {
   ruff_lsp = {},
   rust_analyzer = require('custom.lspconfig.rust_analyzer'),
   ts_ls = require('custom.lspconfig.ts_ls'),
+  jdtls = require('custom.lspconfig.jdtls'),
   ruby_lsp = {},
 }
 
