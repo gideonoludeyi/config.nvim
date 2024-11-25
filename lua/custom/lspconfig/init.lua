@@ -46,6 +46,8 @@ local on_attach = function(_, bufnr)
   vim.api.nvim_buf_create_user_command(bufnr, 'Format', function(_)
     vim.lsp.buf.format()
   end, { desc = 'Format current buffer with LSP' })
+
+  nmap("<leader>cf", vim.lsp.buf.format, '[C]ode [F]ormat')
 end
 
 -- document existing key chains
@@ -86,7 +88,6 @@ require('mason-lspconfig').setup()
 --  the server config. You must look up that documentation yourself.
 local servers = {
   -- clangd = {},
-  -- gopls = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = require('custom.lspconfig.lua_ls'),
@@ -96,6 +97,7 @@ local servers = {
   ts_ls = require('custom.lspconfig.ts_ls'),
   jdtls = require('custom.lspconfig.jdtls'),
   ruby_lsp = {},
+  gopls = {},
 }
 
 -- Setup neovim lua configuration
