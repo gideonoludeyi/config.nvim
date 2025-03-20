@@ -91,8 +91,7 @@ local servers = {
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
   lua_ls = require('custom.lspconfig.lua_ls'),
-  pyright = require('custom.lspconfig.pyright'),
-  ruff_lsp = {},
+  -- pyright = require('custom.lspconfig.pyright'),
   rust_analyzer = require('custom.lspconfig.rust_analyzer'),
   ts_ls = require('custom.lspconfig.ts_ls'),
   jdtls = require('custom.lspconfig.jdtls'),
