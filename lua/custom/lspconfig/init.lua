@@ -16,9 +16,6 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
-  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
-
   nmap('gd', vim.lsp.buf.definition, '[G]oto [D]efinition')
   nmap('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
   nmap('gI', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
@@ -48,6 +45,12 @@ local on_attach = function(_, bufnr)
   end, { desc = 'Format current buffer with LSP' })
 
   nmap("<leader>cf", vim.lsp.buf.format, '[C]ode [F]ormat')
+  nmap('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
+  nmap('<leader>cs', function()
+    -- call the ':Copilot' command
+    vim.cmd('Copilot panel')
+  end, '[C]opilot [S]uggestion(s)')
+  nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 end
 
 -- document existing key chains
