@@ -82,7 +82,7 @@ require('which-key').add({
 -- mason-lspconfig requires that these setup functions are called in this order
 -- before setting up the servers.
 require('mason').setup()
-require('mason-lspconfig').setup()
+-- require('mason-lspconfig').setup()
 
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -100,6 +100,7 @@ local servers = {
   jdtls = require('custom.lspconfig.jdtls'),
   ruby_lsp = {},
   gopls = {},
+  -- ruff = {},
 }
 
 -- Setup neovim lua configuration
